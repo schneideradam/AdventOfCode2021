@@ -16,7 +16,9 @@ def part_2():
     prev_sum = float('inf')
     for line in range(WINDOW, len(NUMBERS) + 1):
         curr_sum = sum(NUMBERS[(line-WINDOW):line])
-    return curr_sum
+        count += int(curr_sum > prev_sum)
+        prev_sum = curr_sum
+    return count
 
 
 print(part_1())
