@@ -55,7 +55,8 @@ def part_2(nums):
                 numbers = _filter_unmatched(numbers, position, common)
         ratings.update({commonality: numbers[0]})
     
-    print("Life support rating: %d" % (int(ratings['oxygen'], base=2) * int(ratings['co2'], base=2)))
+    print("Life support rating: %d" % (int(ratings['oxygen'],
+                                       base=2) * int(ratings['co2'], base=2)))
     print(ratings)
 
 
