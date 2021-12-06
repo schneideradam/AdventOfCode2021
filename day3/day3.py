@@ -49,7 +49,7 @@ def part_2(nums):
     ratings = {}
     for commonality in ['oxygen', 'co2']:
         numbers = copy(nums)
-        for position in range(12):
+        for position in range(len(nums[0])):
             if len(numbers) > 1:
                 common = _get_most_common_in_position(numbers, position, commonality)
                 numbers = _filter_unmatched(numbers, position, common)
