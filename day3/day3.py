@@ -53,6 +53,8 @@ def part_2(nums):
             if len(numbers) > 1:
                 common = _get_most_common_in_position(numbers, position, commonality)
                 numbers = _filter_unmatched(numbers, position, common)
+            else:
+                break
         ratings.update({commonality: numbers[0]})
     
     print("Life support rating: %d" % (int(ratings['oxygen'],
