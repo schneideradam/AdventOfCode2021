@@ -7,7 +7,7 @@ INPUT = [x.strip().split(" -> ") for x in open('lines.txt', 'r').readlines()]
 all_coordinates = list(map(lambda x: [list(map(int, x[0].split(","))), 
                                       list(map(int, x[1].split(",")))], INPUT))
 def part_1():
-    def is_vertical_or_horizontal(coordinates):
+    def _is_vertical_or_horizontal(coordinates):
         """
         filter any invalid lines?
         """
@@ -16,9 +16,9 @@ def part_1():
                 abs(coordinates[0][0] - coordinates [1][0]) == abs(coordinates[0][1] - coordinates [1][1])
                 )
 
-    valid_coordinates = list(filter(is_vertical_or_horizontal, all_coordinates))
+    valid_coordinates = list(filter(_is_vertical_or_horizontal, all_coordinates))
 
-    dataframe = pd.DataFrame(0, (x for x in range(1001)), (x for x in range(1001)))
+    dataframe = pd.DataFrame(0, index=range(1001), columns=range(1001))
 
     def _step(val, distance):
         if distance < 0:
